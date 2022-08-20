@@ -48,13 +48,35 @@ public class Main {
         dogs.add(new Dog());
         dogs.add(new Dog());
 
-        List<? extends Pet> l = func(cats);
-        //l.add(new Pet()); // Error
+//        List<? extends Pet> l = func(cats);
+//        //l.add(new Pet()); // Error
+//
+//        func2(pets);
 
-        func2(pets);
+
+        printList2(animals);
+        printList2(pets);
 
         int a = 1;
     }
+
+
+    public static void printList(List<Object> list) {
+        for (Object elem : list)
+            System.out.println(elem + " ");
+        System.out.println();
+    }
+
+
+    public static void printList2(List<?> list) // producer
+    {
+        //list.add(new Object()); // ERROR
+        for (Object elem: list)
+            System.out.print(elem + " ");
+        System.out.println();
+    }
+
+
 }
 
 
